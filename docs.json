@@ -1,0 +1,379 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Sheest.vn",
+  "colors": {
+    "primary": "#212529",
+    "light": "#ffffff",
+    "dark": "#212529"
+  },
+  "favicon": "/images/logo.svg",
+  "navigation": {
+    "languages": [
+      {
+        "language": "vi",
+        "tabs": [
+          {
+            "tab": "Hướng dẫn",
+            "groups": [
+              {
+                "group": "Làm quen với Sheets.vn",
+                "pages": [
+                  "intro/about",
+                  "intro/components",
+                  "intro/account",
+                  "intro/subscription"
+                ]
+              },
+              {
+                "group": "Không gian làm việc",
+                "pages": [
+                  "space/manage",
+                  "space/collaborator",
+                  "space/ai",
+                  "space/subscription",
+                  "space/usage"
+                ]
+              },
+              {
+                "group": "Bộ dữ liệu",
+                "pages": [
+                  "base/manage",
+                  "base/export-import",
+                  "base/templates"
+                ]
+              },
+              {
+                "group": "Bảng dữ liệu",
+                "pages": [
+                  "table/manage",
+                  "table/export-import"
+                ]
+              },
+              {
+                "group": "Bản ghi dữ liệu",
+                "pages": [
+                  "record/manage",
+                  "record/comment",
+                  "record/history"
+                ]
+              },
+              {
+                "group": "Các trường dữ liệu",
+                "pages": [
+                  "field/manage",
+                  "field/short-text",
+                  "field/long-text",
+                  "field/single-select",
+                  "field/multiple-select",
+                  "field/number",
+                  "field/date",
+                  "field/rating",
+                  "field/checkbox",
+                  "field/file",
+                  "field/formula",
+                  "field/link",
+                  "field/rollup",
+                  "field/conditional-rollup",
+                  "field/lookup",
+                  "field/conditional-lookup",
+                  "field/user",
+                  "field/created-by",
+                  "field/created-time",
+                  "field/modified-by",
+                  "field/modified-time",
+                  "field/auto-number",
+                  "field/ai",
+                  "field/button"
+                ]
+              },
+              {
+                "group": "Chế độ xem dữ liệu",
+                "pages": [
+                  {
+                    "group": "Thanh công cụ",
+                    "icon": "pen-ruler",
+                    "pages": [
+                      "view/toolbar/filter",
+                      "view/toolbar/group",
+                      "view/toolbar/sort",
+                      "view/toolbar/share"
+                    ]
+                  },
+                  "view/grid",
+                  "view/form",
+                  "view/kanban",
+                  "view/calendar",
+                  "view/gallery"
+                ]
+              },
+              {
+                "group": "Bảng báo cáo",
+                "pages": [
+                  "dashboard/manage",
+                  "dashboard/query",
+                  "dashboard/charts"
+                ]
+              },
+              {
+                "group": "Tự động hóa",
+                "pages": [
+                  "automation/manage",
+                  "automation/triggers",
+                  "automation/actions",
+                  "automation/ai",
+                  "automation/javascript",
+                  "automation/conditions",
+                  "automation/history"
+                ]
+              },
+              {
+                "group": "Tính năng AI",
+                "pages": [
+                  "ai/overview",
+                  "ai/chat",
+                  "ai/app-builder",
+                  "ai/models"
+                ]
+              },
+              {
+                "group": "Ma trận phân quyền",
+                "pages": [
+                  "authority-matrix/manage",
+                  "authority-matrix/guide"
+                ]
+              },
+              {
+                "group": "Kết nối CSDL",
+                "pages": [
+                  "connection"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "API",
+            "groups": [
+              {
+                "group": "Giới thiệu về API",
+                "pages": []
+              },
+              {
+                "group": "API Endpoints",
+                "openapi": {
+                  "source": "openapi.json",
+                  "directory": "api/endpoints"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "language": "en",
+        "tabs": [
+          {
+            "tab": "Guideline",
+            "groups": [
+              {
+                "group": "Introduction to Sheets.vn",
+                "pages": [
+                  "intro/en/about",
+                  "intro/en/components",
+                  "intro/en/account",
+                  "intro/en/subscription"
+                ]
+              },
+              {
+                "group": "Space",
+                "pages": [
+                  "space/en/manage",
+                  "space/en/collaborator",
+                  "space/en/ai",
+                  "space/en/subscription",
+                  "space/en/usage"
+                ]
+              },
+              {
+                "group": "Base",
+                "pages": [
+                  "base/en/manage",
+                  "base/en/export-import",
+                  "base/en/templates"
+                ]
+              },
+              {
+                "group": "Table",
+                "pages": [
+                  "table/en/manage",
+                  "table/en/export-import"
+                ]
+              },
+              {
+                "group": "Records",
+                "pages": [
+                  "record/en/manage",
+                  "record/en/comment",
+                  "record/en/history"
+                ]
+              },
+              {
+                "group": "Fields",
+                "pages": [
+                  "field/en/manage",
+                  "field/en/short-text",
+                  "field/en/long-text",
+                  "field/en/single-select",
+                  "field/en/multiple-select",
+                  "field/en/number",
+                  "field/en/date",
+                  "field/en/rating",
+                  "field/en/checkbox",
+                  "field/en/file",
+                  "field/en/formula",
+                  "field/en/link",
+                  "field/en/rollup",
+                  "field/en/conditional-rollup",
+                  "field/en/lookup",
+                  "field/en/conditional-lookup",
+                  "field/en/user",
+                  "field/en/created-by",
+                  "field/en/created-time",
+                  "field/en/modified-by",
+                  "field/en/modified-time",
+                  "field/en/auto-number",
+                  "field/en/ai",
+                  "field/en/button"
+                ]
+              },
+              {
+                "group": "Views",
+                "pages": [
+                  {
+                    "group": "Toolbar",
+                    "icon": "pen-ruler",
+                    "pages": [
+                      "view/toolbar/en/filter",
+                      "view/toolbar/en/group",
+                      "view/toolbar/en/sort",
+                      "view/toolbar/en/share"
+                    ]
+                  },
+                  "view/en/grid",
+                  "view/en/form",
+                  "view/en/kanban",
+                  "view/en/calendar",
+                  "view/en/gallery"
+                ]
+              },
+              {
+                "group": "Dashboard",
+                "pages": [
+                  "dashboard/en/manage",
+                  "dashboard/en/query",
+                  "dashboard/en/charts"
+                ]
+              },
+              {
+                "group": "Automation",
+                "pages": [
+                  "automation/en/manage",
+                  "automation/en/triggers",
+                  "automation/en/actions",
+                  "automation/en/ai",
+                  "automation/en/javascript",
+                  "automation/en/conditions",
+                  "automation/en/history"
+                ]
+              },
+              {
+                "group": "AI functions",
+                "pages": [
+                  "ai/en/overview",
+                  "ai/en/chat",
+                  "ai/en/app-builder",
+                  "ai/en/models"
+                ]
+              },
+              {
+                "group": "Authority matrix",
+                "pages": [
+                  "authority-matrix/en/manage",
+                  "authority-matrix/en/guide"
+                ]
+              },
+              {
+                "group": "Database connection",
+                "pages": [
+                  "en/connection"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "API",
+            "groups": [
+              {
+                "group": "API documentation",
+                "pages": []
+              },
+              {
+                "group": "Endpoint examples",
+                "openapi": {
+                  "source": "openapi.json",
+                  "directory": "api/endpoints"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "logo": {
+    "light": "/images/main-logo.svg",
+    "dark": "/images/dark-logo.svg",
+    "href": "https://www.sheets.vn"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Trang chủ",
+        "href": "https://www.sheets.vn"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Ứng dụng",
+      "href": "https://sheets.vn/auth/login"
+    }
+  },
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
+  },
+  "footer": {
+    "socials": {
+      "youtube": "https:////youtube.com",
+      "linkedin": "https://linkedin.com",
+      "facebook": "https://facebook.com"
+    }
+  },
+  "background": {
+    "decoration": "grid",
+    "color": {
+      "dark": "#212529"
+    }
+  },
+  "appearance": {
+    "default": "system"
+  }
+}
