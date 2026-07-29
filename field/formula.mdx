@@ -1,0 +1,176 @@
+---
+title: "Công thức"
+icon: "plus-minus"
+---
+
+Formula fields allow you to perform calculations based on other field values. These calculations can be simple mathematical operations or complex string manipulations and logical evaluations.
+
+### **Data Types and Formulas**
+
+Before starting to write formulas, understanding data types is crucial for ensuring your formulas work correctly. Different data types support different operations and functions. Common data types include:
+
+- Numbers: Integers or decimals, supporting arithmetic operations.
+- Text: String values, supporting concatenation and partial text operations.
+- Dates: Specifically formatted dates, supporting date calculations.
+- Boolean: True (TRUE) or false (FALSE), used for logical operations.
+
+### **Referencing Fields**
+
+In formulas, you can reference other field values by their field names. Make sure to use the correct field names and note that field names are case-sensitive.
+
+### **Formula Writing Practices**
+
+When writing formulas, you’ll use operators, functions, and field references. Here are some practical formula writing practices:
+
+#### **Using Operators**
+
+- **Addition** (`+`): Used for calculating sums of numbers or concatenating strings.
+- **Subtraction** (`-`): Used for calculating differences between numbers.
+- **Multiplication** (`*`): Used for calculating products of numbers.
+- **Division** (`/`): Used for calculating quotients of numbers.
+- **Modulo** (`%`): Used for calculating remainders of numbers.
+
+#### **Applying Functions**
+
+Functions are predefined formulas that perform specific operations. For example, the `SUM` function can calculate the total of multiple values, while the `LEFT` function can extract a certain number of characters from a text field.
+
+#### **Handling Text**
+
+When working with text, you might need to use the following operations:
+
+- **Concatenation**: Use the `&` operator or `CONCATENATE` function to join two or more text strings.
+- **Substrings**: Use `LEFT`, `RIGHT`, or `MID` functions to extract parts of strings.
+
+#### **Logical Evaluation**
+
+Use the `IF` function for logical evaluation to return different values based on conditions. The format is:
+
+```text
+IF(điều_kiện, giá_trị_nếu_đúng, giá_trị_nếu_sai)
+```
+
+#### **Complex Expressions**
+
+You may need to write complex expressions involving multiple operations and functions. In such cases, ensure you use proper parentheses to control the order of operations.
+
+#### **Formatting and Interactive Display**
+
+Formula output results can also participate in [**formatting**](https://help.teable.ai/en/basic/field/common/formatter) and [**interactive display**](https://help.teable.ai/en/basic/field/common/show-as) configurations, allowing output content to meet custom display requirements. Since formula outputs are dynamic, the available formatting and interactive display configurations are determined by the inferred result of the specific expression.
+
+> The field value type of a formula is statically inferred when entering the formula, without waiting for actual calculation with referenced values. Therefore, you can always select formatting and interactive display configurations immediately after entering the formula.
+
+### **Debugging and Optimization**
+
+Once a formula is written correctly, it should execute without errors and return expected results. If a formula isn’t working as expected, you may need to debug it.
+
+#### **Debugging Tips**
+
+- **Check Data Types**: Confirm that your operations and functions use the correct data types.
+- **Verify Field References**: Ensure referenced field names are correct.
+- **Step-by-Step Testing**: Break down complex formulas into smaller parts and test each part separately.
+
+#### **Performance Considerations**
+
+- **Avoid Redundant Calculations**: If the same calculation is used in multiple places, consider storing its result in a separate field.
+- **Limit Complex Functions**: Some complex functions, such as those involving large data operations, may impact performance.
+
+## Tổng hợp các hàm
+
+### Hàm xử lý số
+
+| Tên hàm | Mô tả | Đầu vào | Đầu ra | Ví dụ |
+| --- | --- | --- | --- | --- |
+| <Badge color="purple">SUM</Badge> | Tính tổng các số, tương đương số\_1 \+ số\_2 \+ … | số\_1, \[số\_2, ...\] | Số | <Badge size="sm">SUM(100, 200, 300)</Badge>⇒<Badge size="sm" icon="calculator">600</Badge> |
+| <Badge color="purple">AVERAGE</Badge> | Tính giá trị trung bình của các số | số\_1, \[số\_2, ...\] | Số | <Badge size="sm">AVERAGE(100, 200, 300)</Badge>⇒<Badge size="sm" icon="calculator">200</Badge> |
+| <Badge color="purple">MAX</Badge> | Trả về số lớn nhất trong danh sách | số\_1, \[số\_2, ...\] | Số | <Badge size="sm">MAX(100, 200, 300)</Badge>⇒<Badge size="sm" icon="calculator">300</Badge> |
+| <Badge color="purple">MIN</Badge> | Trả về số nhỏ nhất trong danh sách | số\_1, \[số\_2, ...\] | Số | <Badge size="sm">MIN(100, 200, 300)</Badge>⇒<Badge size="sm" icon="calculator">100</Badge> |
+| <Badge color="purple">ROUND</Badge> | Làm tròn số đến một số chữ số thập phân nhất định | số, \[độ\_chính\_xác\] | Số | <Badge size="sm">ROUND(1.99, 0)</Badge> ⇒ <Badge size="sm" icon="calculator">2</Badge><br /><Badge size="sm">ROUND(16.8, -1)</Badge>⇒<Badge size="sm" icon="calculator">20</Badge> |
+| <Badge color="purple">ROUNDUP</Badge> | Làm tròn theo hướng đẩy giá trị ra xa số 0 | số, \[độ\_chính\_xác\] | Số | <Badge size="sm">ROUNDUP(1.1, 0)</Badge>⇒<Badge size="sm" icon="calculator">2</Badge><br /><Badge size="sm">ROUNDUP(-1.1, 0)</Badge>⇒<Badge size="sm" icon="calculator">-2</Badge> |
+| <Badge color="purple">ROUNDDOWN</Badge> | Làm tròn theo hướng đẩy giá trị tiến về số 0 | số, \[độ\_chính\_xác\] | Số | <Badge size="sm">ROUNDDOWN(1.9, 0)</Badge>⇒<br /><Badge size="sm" icon="calculator">2</Badge><br /><Badge size="sm">ROUNDDOWN(-1.9, 0)</Badge>⇒<Badge size="sm" icon="calculator">-1</Badge> |
+| <Badge color="purple">CEILING</Badge> |  | số, \[bội\_số\] | Số | <Badge size="sm">CEILING(2.49)</Badge>⇒<Badge size="sm" icon="calculator">3</Badge><br /><Badge size="sm">CEILING(2.49, 1)</Badge>⇒<Badge size="sm" icon="calculator">2.4</Badge> |
+| <Badge color="purple">FLOOR</Badge> |  | số, \[bội\_số\] | Số | <Badge size="sm">FLOOR(2.49)</Badge>⇒<Badge size="sm" icon="calculator">2</Badge><br /><Badge size="sm">FLOOR(2.49, 1)</Badge>⇒<Badge size="sm" icon="calculator">2.4</Badge> |
+| <Badge color="purple">EVEN</Badge> | Trả về số chẵn nhỏ nhất mà lớn hơn hoặc bằng số đã cho | Số | Số | <Badge size="sm">EVEN(0.1)</Badge>⇒<Badge size="sm" icon="calculator">2</Badge><br /><Badge size="sm">EVEN(-0.1)</Badge>⇒<Badge size="sm" icon="calculator">-2</Badge> |
+| <Badge color="purple">ODD</Badge> | Trả về số lẻ gần nhất với số đã cho | Số | Số | <Badge size="sm">ODD(0.1)</Badge>⇒<Badge size="sm" icon="calculator">1</Badge><br /><Badge size="sm">ODD(-0.1)</Badge>⇒<Badge size="sm" icon="calculator">-1</Badge> |
+| <Badge color="purple">INT</Badge> | Trả về phần nguyên của số đã cho | Số | Số | <Badge size="sm">INT(1.9)</Badge>⇒<Badge size="sm" icon="calculator">1</Badge><br /><Badge size="sm">INT(-1.9)</Badge>⇒<Badge size="sm" icon="calculator">-2</Badge> |
+| <Badge color="purple">ABS</Badge> | Trả về giá trị tuyệt đối của số đã cho | Số | Số | <Badge size="sm">ABS(-1)</Badge>⇒<Badge size="sm" icon="calculator">1</Badge> |
+| <Badge color="purple">SQRT</Badge> | Tính căn bậc hai của một số không âm | Số | Số | <Badge size="sm">SQRT(4)</Badge>⇒<Badge size="sm" icon="calculator">2</Badge> |
+| <Badge color="purple">POWER</Badge> |  | cơ\_số, số\_mũ | Số | <Badge size="sm">POWER(2, 2)</Badge>⇒<Badge size="sm" icon="calculator">4</Badge> |
+| <Badge color="purple">EXP</Badge> |  | Số | Số | <Badge size="sm">EXP(0)</Badge>⇒<Badge size="sm" icon="calculator">1</Badge><br /><Badge size="sm">EXP(1)</Badge>⇒<Badge size="sm" icon="calculator">2.718</Badge> |
+| <Badge color="purple">LOG</Badge> |  | số\_dương, \[cơ\_số=10\] | Số | <Badge size="sm">LOG(100)</Badge>⇒<Badge size="sm" icon="calculator">2</Badge><Badge size="sm">LOG(1024, 2)</Badge>⇒<Badge size="sm" icon="calculator">10</Badge> |
+| <Badge color="purple">MOD</Badge> | Trả về số dư của phép chia | số, số\_chia | Số | <Badge size="sm">MOD(9, 2)</Badge>⇒<Badge size="sm" icon="calculator">1</Badge><br /><Badge size="sm">MOD(9, 3)</Badge>⇒<Badge size="sm" icon="calculator">0</Badge> |
+| <Badge color="purple">VALUE</Badge> | Chuyển đổi văn bản thành số | Văn bản | Số | <Badge size="sm">VALUE("$1,000,000")</Badge>⇒<Badge size="sm" icon="calculator">1000000</Badge> |
+
+### Hàm xử lý văn bản
+
+| Tên hàm | Mô tả | Đầu vào | Đầu ra | Ví dụ |
+| --- | --- | --- | --- | --- |
+| <Badge color="purple">CONCATENATE</Badge> |  |  |  | <Badge size="sm">CONCATENATE("Hello ", "Sheets.vn")</Badge>⇒<Badge size="sm" icon="calculator">Hello Sheets.vn</Badge> |
+| <Badge color="purple">FIND</Badge> |  |  |  | <Badge size="sm">FIND("Sheets.vn", "Hello Sheets.vn")</Badge>⇒<Badge size="sm" icon="calculator">7</Badge> |
+| <Badge color="purple">SEARCH</Badge> |  |  |  | <Badge size="sm">SEARCH("Sheets.vn", "Hello Sheets.vn")</Badge>⇒<Badge size="sm" icon="calculator">7</Badge> |
+| <Badge color="purple">MID</Badge> |  |  |  | <Badge size="sm">MID("Hello Sheets.vn", 6, 6)</Badge>⇒<Badge size="sm" icon="calculator">Sheets</Badge> |
+| <Badge color="purple">LEFT</Badge> |  |  |  | <Badge size="sm">LEFT("2023-09-06", 4)</Badge>⇒<Badge size="sm" icon="calculator">"2023"</Badge> |
+| <Badge color="purple">RIGHT</Badge> |  |  |  | <Badge size="sm">RIGHT("2023-09-06", 5)</Badge>⇒<Badge size="sm" icon="calculator">"09-06"</Badge> |
+| <Badge color="purple">REPLACE</Badge> |  |  |  | <Badge size="sm">REPLACE("Hello Sheets", 7, 6, "Sheets.vn")</Badge>⇒<Badge size="sm" icon="calculator">"Hello Sheets.vn"</Badge> |
+| <Badge color="purple">REGEXP_REPLACE</Badge> |  |  |  | <Badge size="sm">REGEXP_REPLACE("Hello Sheest.vn", "H.* ", "")</Badge>⇒<Badge size="sm" icon="calculator">"Sheets.vn"</Badge> |
+| <Badge color="purple">SUBSTITUTE</Badge> |  |  |  | <Badge size="sm">SUBSTITUTE("Hello Sheets", "Sheets", "Sheets.vn")</Badge>⇒<Badge size="sm" icon="calculator">"Hello Sheets.vn"</Badge> |
+| <Badge color="purple">LOWER</Badge> |  |  |  | <Badge size="sm">LOWER("Hello Sheets.vn")</Badge>⇒<Badge size="sm" icon="calculator">"hello sheets.vn"</Badge> |
+| <Badge color="purple">UPPER</Badge> |  |  |  | <Badge size="sm">UPPER("Hello Sheets.vn")</Badge>⇒<Badge size="sm" icon="calculator">"HELLO SHEETS.VN"</Badge> |
+| <Badge color="purple">REPT</Badge> |  |  |  | <Badge size="sm">REPT("Hello!", 3)</Badge>⇒<Badge size="sm" icon="calculator">"Hello!Hello!Hello!"</Badge> |
+| <Badge color="purple">TRIM</Badge> |  |  |  | <Badge size="sm">TRIM(" Hello ")</Badge>⇒<Badge size="sm" icon="calculator">"Hello"</Badge> |
+| <Badge color="purple">LEN</Badge> |  |  |  | <Badge size="sm">LEN("Hello")</Badge>⇒<Badge size="sm" icon="calculator">5</Badge> |
+| <Badge color="purple">T</Badge> |  |  |  | <Badge size="sm">T("Hello")</Badge>⇒<Badge size="sm" icon="calculator">"Hello"</Badge><br /><Badge size="sm">T(100)</Badge>⇒<Badge size="sm" icon="calculator">null</Badge> |
+| <Badge color="purple">ENCODE_URL_COMPONENT</Badge> |  |  |  | <Badge size="sm">ENCODE_URL_COMPONENT("Hello Sheest.vn")</Badge>⇒<Badge size="sm" icon="calculator">"Hello%20Sheets.vn"</Badge> |
+
+### Hàm xử lý logic
+
+| Tên hàm | Mô tả | Đầu vào | Đầu ra | Ví dụ |
+| --- | --- | --- | --- | --- |
+| <Badge color="purple">IF</Badge> |  | điều\_kiện, giá\_trị\_nếu\_đúng, giá\_trị\_nếu\_sai |  | <Badge size="sm">IF(2 > 1, "A", "B")</Badge>⇒<Badge size="sm" icon="calculator">"A"</Badge><br /><Badge size="sm">IF(2 < 1, TRUE, FALSE)</Badge>⇒<Badge size="sm" icon="calculator">FALSE</Badge> |
+| <Badge color="purple">SWITCH</Badge> |  |  |  | <Badge size="sm">SWITCH("B", "A", "Value A", "B", "Value B", "Default Value")</Badge>⇒<Badge size="sm" icon="calculator">"Value B"</Badge> |
+| <Badge color="purple">AND</Badge> |  |  |  | <Badge size="sm">AND(1 < 2, 5 > 3)</Badge>⇒<Badge size="sm" icon="calculator">true</Badge><br /><Badge size="sm">AND(1 < 2, 5 < 3)</Badge>⇒<Badge size="sm" icon="calculator">false</Badge> |
+| <Badge color="purple">OR</Badge> |  |  |  | <Badge size="sm">OR(1 < 2, 5 < 3)</Badge>⇒<Badge size="sm" icon="calculator">true</Badge><br /><Badge size="sm">OR(1 > 2, 5 < 3)</Badge>⇒<Badge size="sm" icon="calculator">false</Badge> |
+| <Badge color="purple">XOR</Badge> |  |  |  | <Badge size="sm">XOR(1 < 2, 5 < 3, 8 < 10)</Badge>⇒<Badge size="sm" icon="calculator">false</Badge><br /><Badge size="sm">XOR(1 > 2, 5 < 3, 8 < 10)</Badge>⇒<Badge size="sm" icon="calculator">true</Badge> |
+| <Badge color="purple">NOT</Badge> |  |  |  | <Badge size="sm">NOT(1 < 2)</Badge>⇒<Badge size="sm" icon="calculator">false</Badge><br /><Badge size="sm">NOT(1 > 2)</Badge>⇒<Badge size="sm" icon="calculator">true</Badge> |
+| <Badge color="purple">BLANK</Badge> |  |  |  | <Badge size="sm">IF(2 > 3, "Yes", BLANK())</Badge>⇒<Badge size="sm" icon="calculator">null</Badge> |
+| <Badge color="purple">ERROR</Badge> |  |  |  | <Badge size="sm">IF(2 > 3, "Yes", ERROR("Calculation"))</Badge>⇒<Badge size="sm" icon="calculator">"#ERROR: Calculation"</Badge> |
+| <Badge color="purple">IS_ERROR</Badge> |  |  |  | <Badge size="sm">IS_ERROR(ERROR())</Badge>⇒<Badge size="sm" icon="calculator">true</Badge> |
+
+### Hàm xử lý thời gian
+
+| Tên hàm | Mô tả | Đầu vào | Đầu ra | Ví dụ |
+| --- | --- | --- | --- | --- |
+| <Badge color="purple">TODAY</Badge> |  |  |  | <Badge size="sm">TODAY()</Badge>⇒<Badge size="sm" icon="calculator">"2026-05-04 00:00"</Badge> |
+| <Badge color="purple">NOW</Badge> |  |  |  | <Badge size="sm">NOW()</Badge>⇒<Badge size="sm" icon="calculator">"2026-05-04 14:47"</Badge> |
+| <Badge color="purple">YEAR</Badge> |  |  |  | <Badge size="sm">YEAR("2023-09-08")</Badge>⇒<Badge size="sm" icon="calculator">2023</Badge> |
+| <Badge color="purple">MONTH</Badge> |  |  |  | <Badge size="sm">MONTH("2023-09-08")</Badge>⇒<Badge size="sm" icon="calculator">9</Badge> |
+| <Badge color="purple">WEEKNUM</Badge> |  |  |  | <Badge size="sm">WEEKNUM("2023-09-08")</Badge>⇒<Badge size="sm" icon="calculator">36</Badge> |
+| <Badge color="purple">WEEKDAY</Badge> |  |  |  | <Badge size="sm">WEEKDAY("2023-09-08", "Monday")</Badge>⇒<Badge size="sm" icon="calculator">5</Badge> |
+| <Badge color="purple">DAY</Badge> |  |  |  | <Badge size="sm">DAY("2023-09-08")</Badge>⇒<Badge size="sm" icon="calculator">8</Badge> |
+| <Badge color="purple">HOUR</Badge> |  |  |  | <Badge size="sm">HOUR("2023-09-08 16:50")</Badge>⇒<Badge size="sm" icon="calculator">16</Badge> |
+| <Badge color="purple">MINUTE</Badge> |  |  |  | <Badge size="sm">MINUTE("2023-09-08 16:50")</Badge>⇒<Badge size="sm" icon="calculator">50</Badge> |
+| <Badge color="purple">SECOND</Badge> |  |  |  | <Badge size="sm">SECOND("2023-09-08 16:50:30")</Badge>⇒<Badge size="sm" icon="calculator">30</Badge> |
+| <Badge color="purple">FROMNOW</Badge> |  |  |  | <Badge size="sm">FROMNOW({Date}, "day")</Badge>⇒<Badge size="sm" icon="calculator">25</Badge> |
+| <Badge color="purple">TONOW</Badge> |  |  |  | <Badge size="sm">TONOW({Date}, "day")</Badge>⇒<Badge size="sm" icon="calculator">25</Badge> |
+| <Badge color="purple">DATETIME_DIFF</Badge> |  |  |  | <Badge size="sm">DATETIME_DIFF("2022-08-01", "2023-09-08", "day")</Badge>⇒<Badge size="sm" icon="calculator">403</Badge> |
+| <Badge color="purple">WORKDAY</Badge> |  |  |  | <Badge size="sm">WORKDAY("2023-09-08", 200)</Badge>⇒<Badge size="sm" icon="calculator">"2024-06-14 00:00:00"</Badge> |
+| <Badge color="purple">WORKDAY_DIFF</Badge> |  |  |  | <Badge size="sm">WORKDAY_DIFF("2023-06-18", "2023-10-01")</Badge>⇒<Badge size="sm" icon="calculator">75</Badge> |
+| <Badge color="purple">IS_SAME</Badge> |  |  |  | <Badge size="sm">IS_SAME("2023-09-08", "2023-09-10")</Badge>⇒<Badge size="sm" icon="calculator">false</Badge> |
+| <Badge color="purple">IS_AFTER</Badge> |  |  |  | <Badge size="sm">IS_AFTER("2023-09-10", "2023-09-08")</Badge>⇒<Badge size="sm" icon="calculator">true</Badge><br /><Badge size="sm">IS_AFTER("2023-09-10", "2023-09-08", "month")</Badge>⇒<Badge size="sm" icon="calculator">false</Badge> |
+
+### Hàm xử lý chuỗi
+
+| Tên hàm | Mô tả | Đầu vào | Đầu ra | Ví dụ |
+| --- | --- | --- | --- | --- |
+| <Badge color="purple">COUNTALL</Badge> |  | giá\_trị\_1, \[giá\_trị\_2, ....\] | Số | <Badge size="sm">COUNTALL(100, 200, "", "Sheets.vn", TRUE())</Badge>⇒<Badge size="sm" icon="calculator">5</Badge> |
+| <Badge color="purple">COUNTA</Badge> |  | giá\_trị\_1, \[giá\_trị\_2, ....\] | Số | <Badge size="sm">COUNTA(100, 200, 300, "", "Sheets.vn", TRUE)</Badge>⇒<Badge size="sm" icon="calculator">4</Badge> |
+| <Badge color="purple">COUNT</Badge> |  | giá\_trị\_1, \[giá\_trị\_2, ....\] | Số | <Badge size="sm">COUNT(100, 200, 300, "", "Sheets.vn", TRUE)</Badge>⇒<Badge size="sm" icon="calculator">3</Badge> |
+| <Badge color="purple">ARRAY_JOIN</Badge> |  | chuỗi, \[ký\_tự\_ngăn\_cách\] | Văn bản | <Badge size="sm">ARRAY_JOIN(["Tom", "Jerry", "Mike"], "; ")</Badge>⇒<Badge size="sm" icon="calculator">"Tom; Jerry; Mike"</Badge> |
+| <Badge color="purple">ARRAY_UNIQUE</Badge> |  | Chuỗi | Chuỗi | <Badge size="sm">ARRAY_UNIQUE([1, 2, 3, 2, 1])</Badge>⇒<Badge size="sm" icon="calculator">[1, 2, 3]</Badge> |
+| <Badge color="purple">ARRAY_FLATTEN</Badge> |  | Chuỗi | Chuỗi | <Badge size="sm">ARRAY_FLATTEN([1, 2, " ", 3, true], ["ABC"])</Badge>⇒<Badge size="sm" icon="calculator">[1, 2, 3, " ", true, "ABC"]</Badge> |
+| <Badge color="purple">ARRAY_COMPACT</Badge> |  | Chuỗi | Chuỗi | <Badge size="sm">ARRAY_COMPACT([1, 2, 3, "", null, "ABC"])</Badge>⇒<Badge size="sm" icon="calculator">[1, 2, 3, "ABC"]</Badge> |
+
+### Các hàm khác
+
+| Tên hàm | Mô tả | Đầu vào | Đầu ra | Ví dụ |
+| --- | --- | --- | --- | --- |
+| <Badge color="purple">RECORD_ID</Badge> | Trả về ID của bản ghi | - | Văn bản | <Badge size="sm">RECORD_ID()</Badge>⇒<Badge size="sm" icon="calculator">recxxxxxx</Badge> |
