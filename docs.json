@@ -3,9 +3,9 @@
   "theme": "mint",
   "name": "Sheest.vn",
   "colors": {
-    "primary": "#0055ff",
+    "primary": "#5046E5",
     "light": "#ffffff",
-    "dark": "#212121"
+    "dark": "#101018"
   },
   "favicon": "/images/logo.svg",
   "navigation": {
