@@ -146,7 +146,7 @@
               {
                 "group": "Kết nối CSDL",
                 "pages": [
-                  "connection"
+                  "database/connection"
                 ]
               }
             ]
@@ -305,7 +305,7 @@
               {
                 "group": "Database connection",
                 "pages": [
-                  "en/connection"
+                  "database/en/connection"
                 ]
               }
             ]
